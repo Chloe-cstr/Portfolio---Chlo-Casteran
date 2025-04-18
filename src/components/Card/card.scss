@@ -1,0 +1,30 @@
+@use '../../styles/abstracts/mixin';
+@use '../../styles/abstracts/var';
+
+.content-card{
+    @include mixin.flex-center;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid black;
+    width: 25%;
+    padding: 40px 20px;
+    &:hover{
+        background-color: var.$primary-color;
+        color: white;
+        border: none;
+    }
+    &__icon{
+        font-size: 50px;
+    }
+    &__text{
+        text-align: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+    &:hover &__text {
+        max-height: 200px; 
+        opacity: 1;
+    }
+}

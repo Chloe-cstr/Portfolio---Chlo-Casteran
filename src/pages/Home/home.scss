@@ -1,0 +1,18 @@
+@use '../../styles/abstracts/mixin';
+
+.section-presentation{
+    @include mixin.flex-center;
+    gap: 70px;
+    padding: 50px 90px;
+    &__text{
+        width: 30%;
+    }
+    &__image{
+        width: 50%;
+        @include mixin.flex-center;
+        &--width{
+            width: 600px;
+            height: auto;
+        }
+    }
+}

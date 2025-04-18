@@ -1,0 +1,12 @@
+.presentation{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__text{
+        line-height: 1.4;
+    }
+    &__button{
+        display: flex;
+        gap: 10px;
+    }
+}

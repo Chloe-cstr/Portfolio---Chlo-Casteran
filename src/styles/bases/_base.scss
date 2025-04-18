@@ -7,6 +7,22 @@ body {
   margin: 0 auto;
 }
 
+h1{
+  font-size: var.$size-title;
+  font-family: var.$title-font;
+  font-weight: normal;
+  line-height: 0.9;
+}
+
+h2{
+  font-size: var.$size-subtitle;
+  font-weight: 600;
+}
+
+p{
+  font-size: var.$size-text;
+}
+
 ul,
 li {
   list-style: none;

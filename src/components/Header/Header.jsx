@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import './header.scss'
 import { useState, useEffect } from "react";
@@ -29,8 +28,8 @@ const Header = () => {
 
     const navItems = [
         { label: "PRÉSENTATION", href: "#presentation" },
-        { label: "RÉALISATIONS", href: "#realisations" },
         { label: "ACTIVITÉS", href: "#activites" },
+        { label: "RÉALISATIONS", href: "#realisations" },
         { label: "COMPÉTENCES", href: "#competences" },
         { label: "CONTACT", href: "#contact" },
     ];

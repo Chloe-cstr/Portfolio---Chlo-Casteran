@@ -1,37 +1,61 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import './header.scss'
+import { useState, useEffect } from "react";
 
 const Header = () => {
-  return (
-    <header className="header">
-      <img src={Logo} alt="Logo Kasa" className="header__logo" />
-      <nav className="header__nav">
-        <ul className="header__nav__list">
-          <li className="header__nav__item">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "header__nav__item__maj active" : "header__nav__item__maj"
+    const [activeSection, setActiveSection] = useState("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setActiveSection(entry.target.id);
             }
-          >
-            Accueil
-          </NavLink>
-          </li>
-          <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "header__nav__item__maj active" : "header__nav__item__maj"
-            }
-          >
-            A propos
-          </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
+            });
+        },
+        {
+            threshold: 0.6, // quand 60% de la section est visible
+        }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
+
+    const navItems = [
+        { label: "PRÉSENTATION", href: "#presentation" },
+        { label: "RÉALISATIONS", href: "#realisations" },
+        { label: "ACTIVITÉS", href: "#activites" },
+        { label: "COMPÉTENCES", href: "#competences" },
+        { label: "CONTACT", href: "#contact" },
+    ];
+
+    return (
+        <header className="header">
+        <img src={Logo} alt="Logo" className="header__logo" />
+        <nav className="header__nav">
+            <ul className="header__nav__list">
+                {navItems.map((item) => (
+                    <li className="header__nav__item" key={item.href}>
+                        <a
+                        href={item.href}
+                        className={`header__nav__item__maj ${
+                            activeSection === item.href.slice(1) ? "active" : ""
+                        }`}
+                        >
+                        {item.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+        </header>
+    );
 };
 
 export default Header;

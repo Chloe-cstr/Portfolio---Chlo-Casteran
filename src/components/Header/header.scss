@@ -1,36 +1,44 @@
+@use '../../styles/abstracts/var';
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 150px;
+    padding: 0 100px;
+    height: 50px;
+    background-color: var.$background-color;
     @media (max-width: 768px) {
       padding: 20px;
     }
     &__logo {
-      width: 150px;
-      height: auto;
-      @media (max-width: 768px) {
-        width: 120px;
+        width: 40px;
         height: auto;
-      }
+        @media (max-width: 768px) {
+            width: 50px;
+            height: auto;
+        }
     }
     &__nav {
-      &__list {
-        display: flex;
-      }
-      &__item {
-        padding-right: 50px;
-        @media (max-width: 768px) {
-          padding-right: 20px;
+        height: 100%;
+        &__list {
+            display: flex;
+            gap: 10px;
+            height: 100%;
         }
-        &__maj {
-          @media (max-width: 768px) {
-            text-transform: uppercase;
-          }
+        &__item{
+            height: 100%;
         }
-      }
+        &__item__maj {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            transition: background-color 0.5s, color 0.5s;
+            &:hover,
+            &.active {
+              background-color: var.$primary-color;
+              color: var.$background-color;
+            }
+        }
     }
-  }
-  .active{
-    text-decoration: underline;
-  }
+}

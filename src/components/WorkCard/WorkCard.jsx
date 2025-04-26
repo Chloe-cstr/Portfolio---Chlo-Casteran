@@ -1,4 +1,5 @@
-import './workCard.scss';
+import React from 'react';
+import './WorkCard.scss';
 import PropTypes from 'prop-types';
 
 const WorkCard = ({image, date, title, onClick}) => {

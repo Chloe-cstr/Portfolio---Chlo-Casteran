@@ -1,0 +1,57 @@
+@use '../../styles/abstracts/var';
+@use '../../styles/abstracts/mixin';
+
+.competences{
+    padding: 50px 100px;
+    &__title{
+        @include mixin.flex-center;
+        color: var.$primary-color;
+        font-family: var.$title-font;
+        font-size: var.$size-title;
+        padding-bottom: 40px;
+    }
+    &__category{
+        display: flex;
+        justify-content: space-around;
+        background-color: var.$background-color;
+        padding: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        &__subtitle{
+            padding: 15px 20px;
+            transition: background-color 0.5s, color 0.5s;
+            &:hover,
+            &.active{
+                background-color: var.$primary-color;
+                border-radius: 5px;
+                color: var.$background-color;
+            }
+        }
+    }
+    &__content{
+        margin-top: 40px;
+        padding: 40px;
+        display: flex;
+        background-color: var.$background-color;
+        &__skills{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 60px;
+            gap: 40px;
+            &__item{
+                @include mixin.flex-center;
+                flex-direction: column;
+                gap: 15px;
+                border: 2px solid black;
+                padding: 40px;
+                flex: 1 1 200px; // tous prennent la même largeur de base (200px ici)
+                min-width: 200px; // largeur minimale
+                max-width: 1fr; // ou laisse flex gérer
+                text-align: center;
+                &__icon{
+                    font-size: 80px;
+                }
+            }
+        }
+    }
+}

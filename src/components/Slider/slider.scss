@@ -1,0 +1,42 @@
+@use '../../styles/abstracts/mixin';
+@use '../../styles/abstracts/var';
+
+.slider{
+    position: relative;
+    &__image{
+        width: 400px;
+        height: auto;
+    }
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 50px;
+        color: var.$background-color;
+        cursor: pointer;
+        z-index: 10;
+        @media (max-width: 768px) {
+          width: 20px;
+          height: auto;
+        }
+        &--left {
+            left: 0;
+        }
+        &--right {
+            right: 0;
+        }
+    }
+    &__indicator {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        background-color: var.$background-color;
+        padding: 5px 15px;
+        border-radius: 20px;
+        @media (max-width: 768px){
+          display: none;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Home from './pages/Home/Home';
+import Loader from "./components/Loader/Loader";
 
 
 // Configure the router with future flags enabled
@@ -19,6 +21,20 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <RouterProvider
       future={{ v7_startTransition: true }} // Enables React's startTransition API

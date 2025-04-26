@@ -1,0 +1,71 @@
+@use '../../styles/abstracts/var';
+@use '../../styles/abstracts/mixin';
+
+.realisations{
+    background-color: var.$background-color;
+    padding: 50px 100px;
+    &__title{
+        @include mixin.flex-center;
+        color: var.$primary-color;
+        font-family: var.$title-font;
+        font-size: var.$size-title;
+        padding-bottom: 40px;
+    }
+    &__card{
+        @include mixin.flex-center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    &__content {
+        @include mixin.flex-center;
+        flex-direction: column;
+        gap: 20px;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        max-width: 40%;
+        position: relative;
+        &__icon{
+            position: absolute; 
+            top: 15px;
+            right: 30px;
+            color: var.$background-color;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        &__description{
+            background-color: var.$background-color;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            &__box{
+                display: flex;
+                justify-content: space-between;
+                &__title{
+                    text-align: start;
+                    padding-top: 10px;
+                    font-weight: 600;
+                }
+                &__button{
+                    @include mixin.flex-center;
+                }
+            }
+        }
+    }
+}

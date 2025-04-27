@@ -10,6 +10,9 @@
         flex-direction: column;
         gap: 10px;
         width: 50%;
+        @media (max-width: 768px){
+            width: 80%;
+        }
         &__input{
             height: 50px;
             font-size: 1.2em;
@@ -31,6 +34,9 @@
             font-size: 1em;
             align-self: center;
             margin-top: 20px;
+            @media (max-width: 768px){
+                width: 50%;
+            }
         }
     }
 }

@@ -4,11 +4,20 @@
     @include mixin.flex-center;
     gap: 70px;
     padding: 50px 90px;
+    @media (max-width: 768px){
+        padding: 40px 20px;
+    }
     &__text{
         width: 30%;
+        @media (max-width: 768px) {
+            width: 100%; 
+        }
     }
     &__image{
         width: 50%;
+        @media (max-width: 768px){
+            display: none;
+        }
         @include mixin.flex-center;
         &--width{
             width: 600px;

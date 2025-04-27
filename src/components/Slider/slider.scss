@@ -7,7 +7,7 @@
         width: 400px;
         height: auto;
         @media (max-width: 768px){
-            width: 200px;
+            width: 250px;
         }
     }
     &__arrow {
@@ -38,5 +38,8 @@
         background-color: var.$background-color;
         padding: 5px 15px;
         border-radius: 20px;
+        @media (max-width: 768px){
+            bottom: 5px;
+        }
     }
 }

@@ -5,6 +5,7 @@ import Services from '../../components/Services/Services';
 import Competences from '../../components/Competences/Competence';
 import Realisations from '../../components/Realisations/Realisations';
 import Contact from '../../components/Contact/Contact';
+import Footer from '../../components/Footer/Footer';
 import './home.scss'
 
 const Home = () => {
@@ -31,6 +32,7 @@ const Home = () => {
       <div id='contact'>
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 };

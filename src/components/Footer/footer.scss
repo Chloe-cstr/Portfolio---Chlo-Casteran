@@ -1,0 +1,9 @@
+@use '../../styles/abstracts/var';
+
+.footer{
+    background-color: var.$background-color;
+    padding: 25px 0;
+    &__text{
+        text-align: center;
+    }
+}

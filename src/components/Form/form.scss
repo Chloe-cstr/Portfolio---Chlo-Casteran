@@ -1,0 +1,36 @@
+@use '../../styles/abstracts/var';
+@use '../../styles/abstracts/mixin';
+
+.form{
+    @include mixin.flex-center;
+    &__content{
+        text-align: left;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 50%;
+        &__input{
+            height: 50px;
+            font-size: 1.2em;
+            border: none;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+            background-color: var.$background-color;
+        }
+        &__textarea{
+            border: none;
+	        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+            background-color: var.$background-color;
+        }
+        &__submit{
+            background-color: var.$primary-color;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            width: 25%;
+            font-size: 1em;
+            align-self: center;
+            margin-top: 20px;
+        }
+    }
+}

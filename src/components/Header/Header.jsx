@@ -34,25 +34,48 @@ const Header = () => {
         { label: "CONTACT", href: "#contact" },
     ];
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => { 
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+          document.body.style.overflow = "hidden"; // ⛔ empêche de scroller
+        } else {
+          document.body.style.overflow = ""; // ✅ remet normal
+        }
+    
+        // Nettoyage au démontage (bonne pratique)
+        return () => {
+          document.body.style.overflow = "";
+        };
+      }, [isMenuOpen]);    
+
     return (
         <header className="header">
-        <img src={Logo} alt="Logo" className="header__logo" />
-        <nav className="header__nav">
-            <ul className="header__nav__list">
-                {navItems.map((item) => (
-                    <li className="header__nav__item" key={item.href}>
-                        <a
-                        href={item.href}
-                        className={`header__nav__item__maj ${
-                            activeSection === item.href.slice(1) ? "active" : ""
-                        }`}
-                        >
-                        {item.label}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+            <img src={Logo} alt="Logo" className="header__logo" />
+            <nav className={`header__nav ${isMenuOpen ? "open" : ""}`}>
+                <ul className="header__nav__list">
+                    {navItems.map((item) => (
+                        <li className="header__nav__item" key={item.href}>
+                            <a
+                            href={item.href}
+                            className={`header__nav__item__maj ${
+                                activeSection === item.href.slice(1) ? "active" : ""
+                            }`}
+                            onClick={() => setIsMenuOpen(false)}
+                            >
+                            {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <div className='header__menu'>
+            <i className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"} header__menu__icon`} onClick={toggleMenu}></i>
+            </div>
         </header>
     );
 };

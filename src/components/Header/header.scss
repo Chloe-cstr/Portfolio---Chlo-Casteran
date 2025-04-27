@@ -1,4 +1,5 @@
 @use '../../styles/abstracts/var';
+@use '../../styles//abstracts/mixin';
 
 .header {
     display: flex;
@@ -13,20 +14,40 @@
     &__logo {
         width: 40px;
         height: auto;
-        @media (max-width: 768px) {
-            width: 50px;
-            height: auto;
-        }
     }
     &__nav {
         height: 100%;
+        @media (max-width: 768px){
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: var.$background-color;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(300%);
+            transition: transform 0.3s ease-in-out;
+            &.open {
+                display: block;
+                transform: translateX(0);
+            }
+        }
         &__list {
             display: flex;
             gap: 10px;
             height: 100%;
+            @media (max-width: 768px){
+                flex-direction: column;
+            }
         }
         &__item{
             height: 100%;
+            @media (max-width: 768px) {
+                height: auto;
+                @include mixin.flex-center;
+                margin-top: 50px;
+            }
         }
         &__item__maj {
             height: 100%;
@@ -38,7 +59,21 @@
             &.active {
               background-color: var.$primary-color;
               color: var.$background-color;
+              @media (max-width: 768px){
+                background-color: var.$background-color;
+                color: black;
+              }
             }
+        }
+    }
+    &__menu{
+        display: none;
+        @media (max-width: 768px){
+            @include mixin.flex-center;
+        }
+        &__icon{
+            font-size: 25px;
+            color: var.$primary-color;
         }
     }
 }

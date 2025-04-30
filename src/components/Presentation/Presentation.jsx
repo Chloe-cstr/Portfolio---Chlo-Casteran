@@ -7,9 +7,11 @@ const Presentation = () =>{
             <h1 className='presentation__title'>Chloë Casteran</h1>
             <h2 className='presentation__subtitle'>Intégrateur web</h2>
             <p className='presentation__text'>
-                Passionnée par le développement web, j’aime transformer 
-                des maquettes en expériences interactives et soignées, 
-                tout en respectant les bonnes pratiques du web.
+                Diplômée d’un DEUG en mathématiques et informatique ainsi 
+                que d’une formation d’intégratrice web, je suis passionnée 
+                par le développement web et j’aime transformer des maquettes 
+                en expériences interactives et soignées, tout en respectant 
+                les bonnes pratiques du web.
             </p>
             <div className='presentation__button'>
                 <Button 

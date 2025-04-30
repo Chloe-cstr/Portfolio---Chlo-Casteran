@@ -18,7 +18,8 @@ const Realisations = () => {
             imageOrdi : KasaOrdi, 
             date : "2024", 
             title : "Application web de location immobilière",
-            description : "Projet réalisé avec React pour le site de location Kasa. Utilisation des routes dynamiques, des composants réutilisables et d’une architecture SPA pour une navigation fluide et moderne."
+            description : "Projet réalisé avec React pour le site de location Kasa. Utilisation des routes dynamiques, des composants réutilisables et d’une architecture SPA pour une navigation fluide et moderne.",
+            link : "https://github.com/Chloe-cstr/kasa.git"
         },
         { 
             image : SophieImg, 
@@ -26,7 +27,8 @@ const Realisations = () => {
             imageOrdi : SophieOrdi, 
             date : "2024", 
             title : "Portfolio - Sophie Bluel",
-            description : "Le site propose une interface d’administration accessible via une page de connexion sécurisée. Une fois connecté, l’utilisateur peut ajouter, supprimer ou modifier les projets affichés dans la galerie grâce à une modale interactive. Les données sont gérées via des appels à une API, et l'affichage s’adapte dynamiquement selon que l’utilisateur est connecté ou non."
+            description : "Le site propose une interface d’administration accessible via une page de connexion sécurisée. Une fois connecté, l’utilisateur peut ajouter, supprimer ou modifier les projets affichés dans la galerie grâce à une modale interactive. Les données sont gérées via des appels à une API, et l'affichage s’adapte dynamiquement selon que l’utilisateur est connecté ou non.",
+            link : "https://github.com/Chloe-cstr/Sophie-bluel.git"
         }
     ]
 
@@ -57,6 +59,7 @@ const Realisations = () => {
                                         text="GITHUB"
                                         icon="fa-brands fa-github"
                                         className="button__empty modal__content__description__box__button"
+                                        link= {selectedWork.link}
                                     />
                                 </div>
                                 <p>

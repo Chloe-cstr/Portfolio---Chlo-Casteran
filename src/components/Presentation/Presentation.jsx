@@ -15,11 +15,13 @@ const Presentation = () =>{
                 <Button 
                     text="ME CONTACTER"
                     className="button__full"
+                    link="#contact"
                 />
                 <Button 
                     text="GITHUB"
                     icon="fa-brands fa-github"
                     className="button__empty"
+                    link="https://github.com/Chloe-cstr?tab=repositories"
                 />
             </div>
         </div>

@@ -20,7 +20,6 @@
     &__card{
         @include mixin.flex-center;
         flex-wrap: wrap;
-        background-color: red;
         gap: 50px;
     }
 }

@@ -87,7 +87,7 @@
                     @include mixin.flex-center;
                     @media (max-width: 768px){
                         justify-content: start;
-                        width: 50%;
+                        width: 150px;
                     }
                 }
             }
